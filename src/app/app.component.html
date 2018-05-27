@@ -10,14 +10,14 @@
     </button>
   
     <div class="collapse navbar-collapse" id="navbarSupportedContent">
-      <ul class="navbar-nav mr-auto">
-        <li class="nav-item active">
+      <ul class="navbar-nav ml-auto">
+        <!-- <li class="nav-item active">
           <a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a>
-        </li>
+        </li> -->
         <!-- <li class="nav-item">
           <a class="nav-link" href="#">Link</a>
         </li> -->
-        <li class="nav-item dropdown">
+        <!-- <li class="nav-item dropdown">
           <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
             Dropdown
           </a>
@@ -27,12 +27,24 @@
             <div class="dropdown-divider"></div>
             <a class="dropdown-item" href="#">Something else here</a>
           </div>
-        </li>
+        </li> -->
        
       
-      <form class="form-inline my-2 my-lg-0">
-        <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
-        <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
+      <form class="form-inline">
+          <!-- <div class="input-group">
+              <input type="text" class="form-control">
+              <span class="input-group-btn">
+                <button class="btn btn-default" type="button">Go!</button>
+              </span>
+            </div> -->
+            <div class="input-group">
+                <input type="text" class="form-control" placeholder="Search..." aria-label="Search..." aria-describedby="basic-addon2">
+                <div class="input-group-append">
+                  <button class="btn btn-default btn-search" type="button"><img class="search-btn-image" src="./assets/images/search2.png" ></button>
+                </div>
+              </div>
+        <!-- <input class="form-control " type="search" placeholder="Search" aria-label="Search">
+        <button class="btn btn-outline-primary " type="submit">Search</button> -->
       </form>
       </ul>
       <ul class="navbar-nav">
@@ -44,10 +56,15 @@
       </ul>
     </div>
   </nav>
-<div class="jumbotron jumbotron-fluid p-0">
+<div class="jumbotron jumbotron-fluid p-0 my-0">
   <img class="main-image " src="./assets/images/blockchain.jpg" />
 </div>
 
-<!-- <mat-divider></mat-divider> -->
+<mat-divider></mat-divider>
+<br>
+<br>
+<br>
+<mat-divider></mat-divider>
+
 
 <app-tech-list></app-tech-list>

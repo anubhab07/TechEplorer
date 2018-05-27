@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { TechListService } from './tech-list.service';
 
 @Component({
   selector: 'app-tech-list',
@@ -7,7 +8,7 @@ import { Component, OnInit } from '@angular/core';
 })
 export class TechListComponent implements OnInit {
 
-  constructor() { }
+  constructor(private _techListService: TechListService) { }
   rep = [1, 2, 3, 4];
   ngOnInit() {
   }

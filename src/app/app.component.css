@@ -2,3 +2,12 @@
     height:350px;
     width: 100%;
 }
+
+.search-btn-image{
+    height: 30px;
+    width: 30px;
+}
+
+.btn-search{
+    padding: 5px !important;
+}
