@@ -11,3 +11,32 @@
 .btn-search{
     padding: 5px !important;
 }
+.nav-bar{
+    width: 100%;
+    top:0;
+    position: fixed;
+    overflow: hidden;
+}
+.example-icon {
+    padding: 0 20px;
+    font-size: 30px;
+    cursor: pointer;
+}
+
+.example-spacer {
+  flex: 1 1 auto;
+}
+.example-form {
+    width: 100%;
+  }
+  
+  .example-full-width {
+    width: 100%;
+  }
+.mat-form-field{
+ width: 100%;
+ padding-left: 15px;   
+}
+.custom-btn{
+    background-color: #4286f4;
+}

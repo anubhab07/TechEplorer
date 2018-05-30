@@ -4,7 +4,6 @@ import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Observable, of } from 'rxjs';
 import { catchError, map, tap } from 'rxjs/operators';
 
-import {Tech} from './Tech';
 
 const httpOptions = {
   headers: new HttpHeaders({ 'Content-Type': 'application/json' })
@@ -17,8 +16,8 @@ export class TechListService {
 
   constructor(private http: HttpClient) { }
 
-  gettechList(userId): Observable<Tech[]> {
-    return this.http.get<Tech[]>('')
+  gettechList(userId) {
+    return this.http.get('')
       .pipe(
         catchError(this.handleError('getHeroes', []))
       );
