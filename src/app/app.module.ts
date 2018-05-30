@@ -17,7 +17,13 @@ import {MatCardModule} from '@angular/material/card';
 import {MatDialogModule} from '@angular/material/dialog';
 import {MatFormFieldModule} from '@angular/material/form-field';
 import {MatButtonModule} from '@angular/material/button';
+import { RegistrationComponent } from './registration/registration.component';
+import { FormComponent } from './form/form.component';
+import { PreferencesComponent } from './preferences/preferences.component';
+import { DetailsComponent } from './details/details.component';
 
+import {MatMenuModule} from '@angular/material/menu';
+import {MatIconModule} from '@angular/material/icon';
 
 @NgModule({
   declarations: [
@@ -26,6 +32,10 @@ import {MatButtonModule} from '@angular/material/button';
     LoginComponent,
     LoginDialogComponent,
     TechListComponent,
+    RegistrationComponent,
+    FormComponent,
+    PreferencesComponent,
+    DetailsComponent,
   ],
   imports: [
     BrowserModule,
@@ -39,7 +49,9 @@ import {MatButtonModule} from '@angular/material/button';
     MatDialogModule,
     MatFormFieldModule,
     MatButtonModule,
-    NgbModule.forRoot()
+    NgbModule.forRoot(),
+    MatMenuModule,
+    MatIconModule
   ],
   entryComponents: [
     LoginDialogComponent
