@@ -1,0 +1,18 @@
+.center-items{
+    margin: 0 10%;
+    padding: 1% 5%;
+}
+.content{
+    background: white;
+    margin: 8% 10%;
+    border-radius: 3%;
+    opacity: 0.8;
+}
+/deep/ mat-form-field{
+    width: 100%;
+}
+button{
+    background: #ff4081;
+    color: white;
+    min-width: 20%;
+}

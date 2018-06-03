@@ -1,70 +1,12 @@
-
-
-<!-- <mat-toolbar color="primary">
-  <span>Tech Explorer</span>
-</mat-toolbar> -->
-<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
-    <a class="navbar-brand" href="#">TechEx</a>
-    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-      <span class="navbar-toggler-icon"></span>
-    </button>
-  
-    <div class="collapse navbar-collapse" id="navbarSupportedContent">
-      <ul class="navbar-nav ml-auto">
-        <!-- <li class="nav-item active">
-          <a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a>
-        </li> -->
-        <!-- <li class="nav-item">
-          <a class="nav-link" href="#">Link</a>
-        </li> -->
-        <!-- <li class="nav-item dropdown">
-          <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-            Dropdown
-          </a>
-          <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-            <a class="dropdown-item" href="#">Action</a>
-            <a class="dropdown-item" href="#">Another action</a>
-            <div class="dropdown-divider"></div>
-            <a class="dropdown-item" href="#">Something else here</a>
-          </div>
-        </li> -->
-       
-      
-      <form class="form-inline">
-          <!-- <div class="input-group">
-              <input type="text" class="form-control">
-              <span class="input-group-btn">
-                <button class="btn btn-default" type="button">Go!</button>
-              </span>
-            </div> -->
-            <div class="input-group">
-                <input type="text" class="form-control" placeholder="Search..." aria-label="Search..." aria-describedby="basic-addon2">
-                <div class="input-group-append">
-                  <button class="btn btn-default btn-search" type="button"><img class="search-btn-image" src="./assets/images/search2.png" ></button>
-                </div>
-              </div>
-        <!-- <input class="form-control " type="search" placeholder="Search" aria-label="Search">
-        <button class="btn btn-outline-primary " type="submit">Search</button> -->
-      </form>
-      </ul>
-      <ul class="navbar-nav">
-      <li class="nav-item">
-          <a class="nav-link">
-            <app-login></app-login>
-          </a>
-        </li>
-      </ul>
-    </div>
-  </nav>
-<div class="jumbotron jumbotron-fluid p-0 my-0">
-  <img class="main-image " src="./assets/images/blockchain.jpg" />
+<div class="nav-bar">
+    <mat-toolbar color="primary">
+      <mat-toolbar-row>
+        <span>TechEx</span>
+        <span class="example-spacer"></span>
+        <!-- <input type="text" placeholder="Search something" class="form-control" [(ngModel)]='searchParam' >
+        <mat-icon *ngIf='searchParam!=""' class="search-icon" (click)="iconClick('search')">search</mat-icon> -->
+        <mat-icon class="example-icon" (click)="iconClick('login')">perm_identity</mat-icon>
+      </mat-toolbar-row>
+      </mat-toolbar>
 </div>
-
-<mat-divider></mat-divider>
-<br>
-<br>
-<br>
-<mat-divider></mat-divider>
-
-
-<app-tech-list></app-tech-list>
+<router-outlet></router-outlet>

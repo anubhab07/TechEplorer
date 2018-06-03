@@ -5,12 +5,11 @@ import { HttpClientModule } from '@angular/common/http';
 
 
 import { DashboardRoutingModule } from './app.route';
-import { AppComponent } from './app.component';
+import { AppComponent, LoginDialogComponent } from './app.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { DashboardComponent } from './dashboard/dashboard.component';
-import { LoginComponent, LoginDialogComponent } from './login/login.component';
 import { TechListComponent } from './tech-list/tech-list.component';
-
+import { HttpClientModule } from '@angular/common/http';
 
 import {MatToolbarModule} from '@angular/material/toolbar';
 import {MatSidenavModule} from '@angular/material/sidenav';
@@ -20,15 +19,33 @@ import {MatCardModule} from '@angular/material/card';
 import {MatDialogModule} from '@angular/material/dialog';
 import {MatFormFieldModule} from '@angular/material/form-field';
 import {MatButtonModule} from '@angular/material/button';
+import { RegistrationComponent } from './registration/registration.component';
+import { FormComponent } from './form/form.component';
+import { PreferencesComponent } from './preferences/preferences.component';
+import { DetailsComponent } from './details/details.component';
 
+import {MatMenuModule} from '@angular/material/menu';
+import {MatIconModule} from '@angular/material/icon';
+import { MyDashboardComponent } from './my-dashboard/my-dashboard.component';
+import { MatGridListModule, MatListModule } from '@angular/material';
+import { LayoutModule } from '@angular/cdk/layout';
+import { MatInputModule } from '@angular/material/input';
+import {MatProgressBarModule} from '@angular/material/progress-bar';
+
+import {DataService} from './data.service';
+import {WebCallingService} from './web-calling.service';
 
 @NgModule({
   declarations: [
     AppComponent,
     DashboardComponent,
-    LoginComponent,
     LoginDialogComponent,
     TechListComponent,
+    RegistrationComponent,
+    FormComponent,
+    PreferencesComponent,
+    DetailsComponent,
+    MyDashboardComponent
   ],
   imports: [
     BrowserModule,
@@ -43,12 +60,19 @@ import {MatButtonModule} from '@angular/material/button';
     MatDialogModule,
     MatFormFieldModule,
     MatButtonModule,
-    NgbModule.forRoot()
+    NgbModule.forRoot(),
+    MatMenuModule,
+    MatIconModule,
+    MatGridListModule,
+    LayoutModule,
+    MatListModule,
+    MatInputModule,
+    MatProgressBarModule
   ],
   entryComponents: [
     LoginDialogComponent
   ],
-  providers: [],
+  providers: [DataService, WebCallingService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

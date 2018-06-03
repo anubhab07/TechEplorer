@@ -1,3 +1,55 @@
-<p>
-  dashboard works!
-</p>
+
+  <!-- <video autoplay muted loop id="myVideo">
+        <source src="../../assets/images/background.mp4" type="video/mp4">
+  </video> -->
+  <!-- <div class="fullscreen-bg">
+      <video loop muted autoplay  class="fullscreen-bg__video">
+          <source src="../../assets/images/background.mp4" type="video/webm">
+          <!-- <source src="video/big_buck_bunny.mp4" type="video/mp4">
+          <source src="video/big_buck_bunny.ogv" type="video/ogg"> -->
+      <!-- </video>
+  </div>
+  <div class="content">
+  <div class="text-left">
+    <h1>Explore events and find like minded people on your technical endeavour.</h1>
+      <input class="form-control center-form" type="text" [(ngModel)]='searchTerm'
+      placeholder="Tell us what you are looking for?" (keyup.enter)='submitSearch()'>
+    
+  </div>
+  </div>  -->
+<div class="parallax">
+    <div class="content">
+        <div class="text-left">
+          <h1>Explore events and find like minded people on your technical endeavour.</h1>
+            <input class="form-control center-form" type="text" [(ngModel)]='searchTerm'
+            placeholder="Tell us what you are looking for?" (keyup.enter)='submitSearch()'>
+          
+        </div>
+    </div>
+</div>
+
+
+<div class="col-xs-12"style="min-height: 500px;">
+    <mat-grid-list cols="3" >
+        <mat-grid-tile  *ngFor="let element of eventsList"  class="pref-card"  (click)='select(element)'>
+            <mat-card class="example-card">
+                <mat-card-header>
+                  <div mat-card-avatar class="example-header-image"></div>
+                  <mat-card-title>{{element.eventName}}</mat-card-title>
+                  <mat-card-subtitle>Dog Breed</mat-card-subtitle>
+                </mat-card-header>
+                <img mat-card-image src="https://material.angular.io/assets/img/examples/shiba2.jpg" alt="Photo of a Shiba Inu">
+                <mat-card-content>
+                  <p>
+                    {{element.description}}
+                  </p>
+                </mat-card-content>
+                <mat-card-actions>
+                  <button mat-button>LIKE</button>
+                  <button mat-button>SHARE</button>
+                </mat-card-actions>
+              </mat-card>
+        </mat-grid-tile>
+      </mat-grid-list>
+      
+</div>

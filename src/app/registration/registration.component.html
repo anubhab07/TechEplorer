@@ -1,0 +1,11 @@
+<div class="top-margin">
+  <div class="col-sm-12 text-center no-spacing">
+      <mat-progress-bar color="accent" mode="determinate" [value]="progress"></mat-progress-bar>
+  </div>
+  <div *ngIf='progress==50' class="col-xs-12">
+    <app-form></app-form>
+  </div>
+  <div *ngIf='progress==100' class="col-xs-12">
+    <app-preferences></app-preferences>
+  </div>
+</div>

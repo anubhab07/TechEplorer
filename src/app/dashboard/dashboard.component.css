@@ -1,0 +1,132 @@
+.parallax {
+    /* The image used */
+    background-image: url('../../assets/images/bg.jpg');
+
+    /* Full height */
+    height: 100%; 
+
+    /* Create the parallax scrolling effect */
+    background-attachment: fixed;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+.custom-jumbotron{
+    background-color: black;
+    opacity: 0.75;
+    border-radius: 10px;
+    top: 50%;
+    width: 100%;
+}
+.date-display{
+    display: inline-block;
+    text-align: center;
+    background: #f6f7f8;
+    border: 1px solid rgba(46,62,72,.12);
+    border-radius: 8px;
+    padding: 8px;
+    min-width: 36px;
+    min-height: 36px;
+}
+.day{
+    color: #f13a59;
+    font-size: 20px;
+}
+.date-display.day, .date-display.month{
+    display: block;
+    text-align: center;
+    line-height: 1.1;
+    font-weight: 500;
+}
+
+.date-display.month{
+    color: rgba(46,62,72,.6);
+    font-weight: 500;
+    text-transform: uppercase;
+}
+
+#myVideo {
+    position: fixed;
+    right: 0;
+    bottom: 0;
+    top: 64.1px;
+    min-width: 100%; 
+    min-height: 100%;
+    background-attachment: fixed;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+.content {
+    position: fixed;
+    width: 70vw;
+    padding: 10%;
+    top:10%;
+    margin: 10%;
+    color: #FFF;
+}   
+.content-in{
+    background: rgba(0, 0, 0, 0.5);
+    color: #f1f1f1;
+    padding: 30px;
+    width: 50%;
+    border-radius: 15px;
+}
+.center-form{
+    height: 72px;
+    font-size: 2.5rem;
+    font-weight: 300;
+}
+.example-card {
+    max-width: 400px;
+  }
+  
+  .example-header-image {
+    background-image: url('https://material.angular.io/assets/img/examples/shiba1.jpg');
+    background-size: cover;
+  }
+
+  /* Bg-Video */
+
+.fullscreen-bg {
+    position: fixed;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    overflow: hidden;
+    z-index: -100;
+  }
+  
+  .fullscreen-bg__video {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+  }
+  
+  @media (min-aspect-ratio: 16/9) {
+    .fullscreen-bg__video {
+      height: 300%;
+      top: -100%;
+    }
+  }
+  
+  @media (max-aspect-ratio: 16/9) {
+    .fullscreen-bg__video {
+      width: 300%;
+      left: -100%;
+    }
+  }
+  
+  @media (max-width: 767px) {
+    .fullscreen-bg {
+      background: url('https://material.angular.io/assets/img/examples/shiba1.jpg') center center / cover no-repeat;
+    }
+  
+    .fullscreen-bg__video {
+      display: none;
+    }
+  }
