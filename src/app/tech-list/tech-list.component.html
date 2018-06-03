@@ -22,13 +22,15 @@
   </div> -->
 <div class="container-fluid">
   <div class="row">
-<div class="card col-sm-4"  *ngFor="let r of rep">
-  <img class="card-img-top" src="https://material.angular.io/assets/img/examples/shiba2.jpg" alt="Card image cap">
+<div class="card col-sm-4 col-md-3"  *ngFor="let tech of techs">
+  <img class="card-img-top card-body-img" [src]="tech.imgSrc" alt="Card image cap">
   <div class="card-body">
-    <h5 class="card-title">Card title</h5>
-    <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-    <a href="#" class="btn btn-primary">Go somewhere</a>
+    <h5 class="card-title">{{tech.name}}</h5>
+    <p class="card-text">{{tech.description}}</p>
   </div>
+  <div class="card-footer"><a href="#" class="btn btn-primary">Follow Link</a></div>
+    
+  
 </div>
 </div>
 </div>

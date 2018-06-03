@@ -4,10 +4,16 @@
 }
 
 .search-btn-image{
-    height: 30px;
-    width: 30px;
+    height: 28px;
+    width: 28px;
 }
 
 .btn-search{
     padding: 5px !important;
+}
+
+.navbar{
+    position: fixed; /* Set the navbar to fixed position */
+    top: 0; /* Position the navbar at the top of the page */
+    width: 100%; /* Full width */
 }
