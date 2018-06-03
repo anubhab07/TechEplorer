@@ -2,7 +2,8 @@ import { Component, OnInit, Inject } from '@angular/core';
 import {MatDialog, MatDialogRef, MAT_DIALOG_DATA} from '@angular/material';
 import {Router} from '@angular/router';
 import { DashboardComponent } from './dashboard/dashboard.component';
-
+import {DataService} from './data.service';
+import { WebCallingService } from './web-calling.service';
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
@@ -11,14 +12,19 @@ import { DashboardComponent } from './dashboard/dashboard.component';
 export class AppComponent {
   title = 'app';
   screenWidth: number;
-  constructor(public dialog: MatDialog, private _router: Router) {
+  searchParam = '';
+  // tslint:disable-next-line:max-line-length
+  constructor(public dialog: MatDialog, private _router: Router, private _dataService: DataService, private _webService: WebCallingService) {
     // set screenWidth on page load
+    this._webService.getEvents();
     this.screenWidth = window.innerWidth;
     window.onresize = () => {
       // set screenWidth on screen size change
       this.screenWidth = window.innerWidth;
     };
   }
+
+
   openDialog(): void {
     const dialogRef = this.dialog.open(LoginDialogComponent, {
       width: '50vw',
@@ -43,6 +49,7 @@ export class AppComponent {
 @Component({
   selector: 'app-login-dialog',
   templateUrl: './login.dialog.html',
+  styleUrls: ['./app.component.css']
 })
 export class LoginDialogComponent {
   email: string;
@@ -71,4 +78,3 @@ export class LoginDialogComponent {
     }
 
   }
-}

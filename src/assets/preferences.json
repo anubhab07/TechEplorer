@@ -1,0 +1,12 @@
+{"list":[
+    {"id": 1,
+    "title": "Machine Learning",
+    "imgUrl": "../../assets/images/1.jpg",
+    "description": "Machine learning is re-writing the way how computers do workand the areas they could be used in."
+},
+{"id": 2,
+    "title": "Artificial Intelligence",
+    "imgUrl": "../../assets/images/2.jpg",
+    "description": "Machine learning is re-writing the way how computers do workand the areas they could be used in."
+}
+]}

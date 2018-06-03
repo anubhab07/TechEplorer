@@ -6,7 +6,7 @@ import { AppComponent, LoginDialogComponent } from './app.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { DashboardComponent } from './dashboard/dashboard.component';
 import { TechListComponent } from './tech-list/tech-list.component';
-
+import { HttpClientModule } from '@angular/common/http';
 
 import {MatToolbarModule} from '@angular/material/toolbar';
 import {MatSidenavModule} from '@angular/material/sidenav';
@@ -28,6 +28,10 @@ import { MatGridListModule, MatListModule } from '@angular/material';
 import { LayoutModule } from '@angular/cdk/layout';
 import { MatInputModule } from '@angular/material/input';
 import {MatProgressBarModule} from '@angular/material/progress-bar';
+
+import {DataService} from './data.service';
+import {WebCallingService} from './web-calling.service';
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -43,6 +47,7 @@ import {MatProgressBarModule} from '@angular/material/progress-bar';
   imports: [
     BrowserModule,
     FormsModule,
+    HttpClientModule,
     BrowserAnimationsModule,
     DashboardRoutingModule,
     MatToolbarModule,
@@ -64,7 +69,7 @@ import {MatProgressBarModule} from '@angular/material/progress-bar';
   entryComponents: [
     LoginDialogComponent
   ],
-  providers: [],
+  providers: [DataService, WebCallingService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

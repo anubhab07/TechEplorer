@@ -1,3 +1,22 @@
-<p>
-  preferences works!
-</p>
+<div class="col-xs-12 content">
+  <h4>Almost There!</h4>
+  <h6>Just select the areas you are interested in. Don't worry, you can come back and modify it at any time.</h6>
+<br/>
+    <mat-grid-list cols="4" >
+        <mat-grid-tile  *ngFor="let element of preferences"  class="pref-card"  (click)='select(element)'>
+            <div class="example-card" [ngClass]="{'selected-card': element.isSelected}">
+                <!-- <mat-card-header>
+                  <mat-card-title class="text-center">{{element.title}}</mat-card-title>
+                </mat-card-header> -->
+                <img mat-card-image src="{{'assets/images/'+element.prefId + '.jpg'}}" alt="Photo">
+                <br/>
+                <div style="text-align: center; margin-top: 5px;">
+                  <h6>{{element.prefTopic}}</h6>
+                </div>
+              </div>
+        </mat-grid-tile>
+      </mat-grid-list>
+</div>
+<div class="col-xs-12" class="content">
+      <button mat-raised-button class="reg-button" (click)='proceed()'>Let's Begin </button>
+</div>

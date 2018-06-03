@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-
+import {DataService} from '../data.service';
 @Component({
   selector: 'app-form',
   templateUrl: './form.component.html',
@@ -7,9 +7,12 @@ import { Component, OnInit } from '@angular/core';
 })
 export class FormComponent implements OnInit {
 
-  constructor() { }
+  constructor(private _dataService: DataService) { }
 
   ngOnInit() {
+  }
+  proceed(){
+    this._dataService.registrationProgress = 100;
   }
 
 }
