@@ -1,3 +1,6 @@
+
+import { AppService } from './app.service';
+
 import { Component, OnInit, Inject } from '@angular/core';
 import {MatDialog, MatDialogRef, MAT_DIALOG_DATA} from '@angular/material';
 import {Router} from '@angular/router';
@@ -9,12 +12,13 @@ import { WebCallingService } from './web-calling.service';
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.css']
 })
-export class AppComponent {
+export class AppComponent implements OnInit {
   title = 'app';
   screenWidth: number;
   searchParam = '';
   // tslint:disable-next-line:max-line-length
-  constructor(public dialog: MatDialog, private _router: Router, private _dataService: DataService, private _webService: WebCallingService) {
+  constructor(public dialog: MatDialog, private _router: Router, private _dataService: DataService, private _webService: WebCallingService
+  , private _appService: AppService) {
     // set screenWidth on page load
     this._webService.getEvents();
     this.screenWidth = window.innerWidth;
@@ -23,9 +27,46 @@ export class AppComponent {
       this.screenWidth = window.innerWidth;
     };
   }
+  geolocationPosition;
+  ngOnInit() {
+    this.getLocation2();
+  }
 
+  getLocation2() {
+    this._appService.getUserLocation().subscribe(res => {
+      console.log(res);
+    });
+  }
 
-  openDialog(): void {
+  getLocation1() {
+    if (window.navigator && window.navigator.geolocation) {
+      window.navigator.geolocation.getCurrentPosition(
+          position => {
+              this.geolocationPosition = position,
+                  console.log(position);
+          },
+          error => {
+              switch (error.code) {
+                  case 1:
+                      console.log('Permission Denied..');
+                      break;
+                  case 2:
+                      console.log('Position Unavailable');
+                      break;
+                  case 3:
+                      console.log('Timeout');
+                      break;
+              }
+          }
+      );
+  }
+  }
+
+  userLocationSuccess(location) {
+    console.log(location);
+  }
+
+  openDialog() {
     const dialogRef = this.dialog.open(LoginDialogComponent, {
       width: '50vw',
       height: '50vh'

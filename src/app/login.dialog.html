@@ -1,18 +1,17 @@
 
-  <h2 mat-dialog-title>Welcome Back</h2>
+  <h2 mat-dialog-title class="text-center">Welcome Back</h2>
   <mat-dialog-content>
-    <form class="example-form">
-        <mat-form-field style="width: 100%;" class="example-full-width">
+        <mat-form-field style="width: 80%; margin-left: 10%" class="example-full-width">
           <input matInput placeholder="Email" [(ngModel)]='email' required>
         </mat-form-field>
       
-        <mat-form-field style="width: 100%" class="example-full-width">
+        <mat-form-field style="width: 80%; margin-left: 10%" class="example-full-width">
           <input matInput type="password" placeholder="Password" [(ngModel)]='password' required>
         </mat-form-field>
 
-      </form>
+
   </mat-dialog-content>
-  <mat-dialog-actions>
+  <mat-dialog-actions style="padding-left: 10%">
     <button mat-raised-button class="custom-btn" mat-dialog-close (click)="submit('register')">Register With Us</button>
     <!-- The mat-dialog-close directive optionally accepts a value as a result for the dialog. -->
     <button mat-raised-button [mat-dialog-close]="false" (click)="submit('login')">Login</button>

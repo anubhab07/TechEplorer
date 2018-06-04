@@ -9,3 +9,8 @@
     background-image: url('https://material.angular.io/assets/img/examples/shiba1.jpg');
     background-size: cover;
 }
+
+.card-body-img{
+    width: 220px;
+    height: 150px;
+}

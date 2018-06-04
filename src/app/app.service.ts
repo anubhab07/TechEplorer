@@ -5,29 +5,23 @@ import { Observable, of } from 'rxjs';
 import { catchError, map, tap } from 'rxjs/operators';
 
 
-const httpOptions = {
-  headers: new HttpHeaders({ 'Content-Type': 'application/json' })
-};
 
 @Injectable({
   providedIn: 'root'
 })
-export class TechListService {
+export class AppService {
+  userLocation = '';
+  constructor(private _http: HttpClient) { }
 
-  constructor(private http: HttpClient) { }
-
-<<<<<<< HEAD
-  getTechList(userId): Observable<Tech[]> {
-    return this.http.get<Tech[]>('')
-=======
-  gettechList(userId) {
-    return this.http.get('')
->>>>>>> f31a9d97a32080c6c7c1b9b8fd5bfb11145e2ef2
+  getUserLocation(): Observable<any> {
+    const url = 'https://ipapi.co/157.41.250.68/json/';
+    const url2 = 'http://ip-api.com/json';
+    const url3 = 'https://api.ipdata.co';
+    return this._http.get(url3)
       .pipe(
-        catchError(this.handleError('getTechList', []))
+        catchError(this.handleError('getUserLocation', []))
       );
   }
-
 
   private handleError<T> (operation = 'operation', result?: T) {
     return (error: any): Observable<T> => {

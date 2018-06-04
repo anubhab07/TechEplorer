@@ -4,13 +4,16 @@
 }
 
 .search-btn-image{
-    height: 30px;
-    width: 30px;
+    height: 28px;
+    width: 28px;
 }
 
 .btn-search{
     padding: 5px !important;
 }
+
+
+
 .nav-bar{
     width: 100%;
     top:0;
@@ -61,7 +64,6 @@ button{
     min-width: 25%;;
 }
 a{
-    margin-left: 25%;
+    margin-left: 17%;
     margin-top: 2%;
-    font-size: 90%;
 }
