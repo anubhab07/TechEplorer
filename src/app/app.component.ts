@@ -6,10 +6,14 @@ import {Router} from '@angular/router';
 import { DashboardComponent } from './dashboard/dashboard.component';
 import {DataService} from './data.service';
 import { WebCallingService } from './web-calling.service';
+import {ViewEncapsulation } from '@angular/core';
+
+
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
-  styleUrls: ['./app.component.css']
+  styleUrls: ['./app.component.css'],
+  encapsulation: ViewEncapsulation.None
 })
 export class AppComponent implements OnInit {
   title = 'app';

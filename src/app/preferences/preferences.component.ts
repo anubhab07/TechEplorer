@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import {DataService} from '../data.service';
 import {WebCallingService} from '../web-calling.service';
-import { element } from 'protractor';
+// import { element } from 'protractor';
 @Component({
   selector: 'app-preferences',
   templateUrl: './preferences.component.html',
@@ -10,7 +10,7 @@ import { element } from 'protractor';
 export class PreferencesComponent implements OnInit {
   preferences = [];
   constructor(private _webService: WebCallingService, private _dataService: DataService) {
-    this._webService.getPrefList().subscribe((data) => {
+    this._webService.getPrefList().subscribe(data => {
       if (data.status === 1) {
         console.log(data.content);
       this.preferences = this.customizeData(data.content);
@@ -45,7 +45,7 @@ export class PreferencesComponent implements OnInit {
         this._dataService.regPreferences.push(element.prefId.toString());
       }
     });
-    setTimeout(() => {this._webService.registerNewUser(); }, 500);
+    setTimeout(() => {this._webService.registerNewUser(this._dataService.userId, location); }, 500);
   }
 
 }

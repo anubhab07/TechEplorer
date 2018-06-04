@@ -145,9 +145,29 @@
 } */
 
 .card-body-img{
-    width: 220px;
-    height: 220px;
+    width: 200px;
+    height: 200px;
     margin-left: auto;
     margin-right: auto;
 
 }
+
+#divLoading{
+    margin-left: auto;
+    margin-right: auto;
+    position: fixed; 
+    right: 0px; 
+    top: 0px; 
+    width: 100%; 
+    height: 100%; 
+    background-color: rgba(102, 102, 102,0.6); 
+    z-index: 30001; 
+  }
+  
+  #divLoadingInner{
+    position: absolute;
+    color: White;
+    top: 50%;
+    left: 45%;
+    opacity: 1 !important;
+  }

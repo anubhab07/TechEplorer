@@ -18,7 +18,7 @@ export class WebCallingService {
 
   constructor(private _http: HttpClient, private _dataService: DataService) { }
 
-  getPrefList() {
+  getPrefList(): Observable<any> {
     const url = 'https://techadv.herokuapp.com/getAllPrefrences';
     return this._http.get(url);
   }
@@ -26,9 +26,13 @@ export class WebCallingService {
   getEvents() {
     const url = 'https://techadv.herokuapp.com/getEvents';
     // let requestBody = new HttpParams();
+    // const requestBody = {
+    //   'userId' : this._dataService.userId,
+    //   'location' : this._dataService.location
+    // };
     const requestBody = {
       'userId' : this._dataService.userId,
-      'location' : this._dataService.location
+      'location' : 'Bangalore'
     };
     this._http.post(url, requestBody, httpOptions).subscribe(data => {
       this._dataService.eventsList = data.content;

@@ -19,18 +19,22 @@ import {MatCardModule} from '@angular/material/card';
 import {MatDialogModule} from '@angular/material/dialog';
 import {MatFormFieldModule} from '@angular/material/form-field';
 import {MatButtonModule} from '@angular/material/button';
+import {MatProgressSpinnerModule} from '@angular/material/progress-spinner';
+import {MatMenuModule} from '@angular/material/menu';
+import {MatIconModule} from '@angular/material/icon';
+import { MyDashboardComponent } from './my-dashboard/my-dashboard.component';
+import { MatGridListModule, MatListModule } from '@angular/material';
+import {MatProgressBarModule} from '@angular/material/progress-bar';
+
+
 import { RegistrationComponent } from './registration/registration.component';
 import { FormComponent } from './form/form.component';
 import { PreferencesComponent } from './preferences/preferences.component';
 import { DetailsComponent } from './details/details.component';
 
-import {MatMenuModule} from '@angular/material/menu';
-import {MatIconModule} from '@angular/material/icon';
-import { MyDashboardComponent } from './my-dashboard/my-dashboard.component';
-import { MatGridListModule, MatListModule } from '@angular/material';
+
 import { LayoutModule } from '@angular/cdk/layout';
 import { MatInputModule } from '@angular/material/input';
-import {MatProgressBarModule} from '@angular/material/progress-bar';
 
 import {DataService} from './data.service';
 import {WebCallingService} from './web-calling.service';
@@ -67,7 +71,8 @@ import {WebCallingService} from './web-calling.service';
     LayoutModule,
     MatListModule,
     MatInputModule,
-    MatProgressBarModule
+    MatProgressBarModule,
+    MatProgressSpinnerModule
   ],
   entryComponents: [
     LoginDialogComponent
