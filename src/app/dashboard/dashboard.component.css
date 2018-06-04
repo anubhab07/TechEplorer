@@ -1,6 +1,6 @@
 .parallax {
     /* The image used */
-    background-image: url('../../assets/images/bg.jpg');
+    background-image: url('../../assets/images/3.jpg');
 
     /* Full height */
     height: 100%; 
@@ -129,3 +129,25 @@
       display: none;
     }
   }
+
+
+
+  .example-card {
+    max-width: 400px;
+    float: left;
+
+}
+
+/* 
+.example-header-image {
+    background-image: url('https://material.angular.io/assets/img/examples/shiba1.jpg');
+    background-size: cover;
+} */
+
+.card-body-img{
+    width: 220px;
+    height: 220px;
+    margin-left: auto;
+    margin-right: auto;
+
+}

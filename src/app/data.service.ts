@@ -13,7 +13,7 @@ export class DataService {
 
   loginId: string;
   loginPassword: string;
-  
+
   userId = '';
   location = '';
 

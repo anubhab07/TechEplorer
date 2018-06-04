@@ -11,11 +11,10 @@ export class PreferencesComponent implements OnInit {
   preferences = [];
   constructor(private _webService: WebCallingService, private _dataService: DataService) {
     this._webService.getPrefList().subscribe((data) => {
-      if (data.status === 1){
+      if (data.status === 1) {
         console.log(data.content);
       this.preferences = this.customizeData(data.content);
-      }
-      else{
+      } else {
         alert("Server Down. Can't get preferences");
       }
     });

@@ -16,13 +16,8 @@ export class TechListService {
 
   constructor(private http: HttpClient) { }
 
-<<<<<<< HEAD
-  getTechList(userId): Observable<Tech[]> {
-    return this.http.get<Tech[]>('')
-=======
   gettechList(userId) {
     return this.http.get('')
->>>>>>> f31a9d97a32080c6c7c1b9b8fd5bfb11145e2ef2
       .pipe(
         catchError(this.handleError('getTechList', []))
       );
