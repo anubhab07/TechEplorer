@@ -7,6 +7,8 @@ import { DashboardComponent } from './dashboard/dashboard.component';
 import {DataService} from './data.service';
 import { WebCallingService } from './web-calling.service';
 import {ViewEncapsulation } from '@angular/core';
+import { MessagingService } from './messaging.service';
+
 
 
 @Component({
@@ -20,8 +22,12 @@ export class AppComponent implements OnInit {
   screenWidth: number;
   searchParam = '';
   // tslint:disable-next-line:max-line-length
-  constructor(public dialog: MatDialog, private _router: Router, private _dataService: DataService, private _webService: WebCallingService
-  , private _appService: AppService) {
+  constructor(public dialog: MatDialog, private _router: Router,
+    private _dataService: DataService,
+    private _webService: WebCallingService,
+    private _appService: AppService,
+    private msgService: MessagingService
+  ) {
     // set screenWidth on page load
     this._webService.getEvents();
     this.screenWidth = window.innerWidth;
@@ -33,6 +39,8 @@ export class AppComponent implements OnInit {
   geolocationPosition;
   ngOnInit() {
     this.getLocation2();
+    this.msgService.getPermission();
+    this.msgService.receiveMessage();
   }
 
   getLocation2() {

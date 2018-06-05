@@ -39,6 +39,11 @@ import { MatInputModule } from '@angular/material/input';
 import {DataService} from './data.service';
 import {WebCallingService} from './web-calling.service';
 
+import { AngularFireModule } from 'angularfire2';
+import { AngularFireDatabaseModule } from 'angularfire2/database';
+import { AngularFireAuthModule } from 'angularfire2/auth';
+import { environment } from './../environments/environment';
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -72,7 +77,10 @@ import {WebCallingService} from './web-calling.service';
     MatListModule,
     MatInputModule,
     MatProgressBarModule,
-    MatProgressSpinnerModule
+    MatProgressSpinnerModule,
+    AngularFireModule.initializeApp(environment.firebase),
+    AngularFireDatabaseModule,
+    AngularFireAuthModule
   ],
   entryComponents: [
     LoginDialogComponent

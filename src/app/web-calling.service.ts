@@ -32,7 +32,7 @@ export class WebCallingService {
     // };
     const requestBody = {
       'userId' : this._dataService.userId,
-      'location' : 'Bangalore'
+      'location' : this._dataService.location
     };
     this._http.post(url, requestBody, httpOptions).subscribe(data => {
       this._dataService.eventsList = data.content;
