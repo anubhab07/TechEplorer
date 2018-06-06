@@ -1,6 +1,6 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
-import { FormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
 
 
@@ -25,7 +25,7 @@ import {MatIconModule} from '@angular/material/icon';
 import { MyDashboardComponent } from './my-dashboard/my-dashboard.component';
 import { MatGridListModule, MatListModule } from '@angular/material';
 import {MatProgressBarModule} from '@angular/material/progress-bar';
-
+import {MatAutocompleteModule} from '@angular/material/autocomplete';
 
 import { RegistrationComponent } from './registration/registration.component';
 import { FormComponent } from './form/form.component';
@@ -59,6 +59,7 @@ import { environment } from './../environments/environment';
   imports: [
     BrowserModule,
     FormsModule,
+    ReactiveFormsModule,
     HttpClientModule,
     BrowserAnimationsModule,
     DashboardRoutingModule,
@@ -80,7 +81,8 @@ import { environment } from './../environments/environment';
     MatProgressSpinnerModule,
     AngularFireModule.initializeApp(environment.firebase),
     AngularFireDatabaseModule,
-    AngularFireAuthModule
+    AngularFireAuthModule,
+    MatAutocompleteModule
   ],
   entryComponents: [
     LoginDialogComponent
@@ -88,4 +90,8 @@ import { environment } from './../environments/environment';
   providers: [DataService, WebCallingService],
   bootstrap: [AppComponent]
 })
-export class AppModule { }
+export class AppModule {
+  constructor(private _webService: WebCallingService) {
+    this._webService.getAutofillSuggestions();
+  }
+}

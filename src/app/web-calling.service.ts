@@ -23,23 +23,79 @@ export class WebCallingService {
     return this._http.get(url);
   }
 
+  getAutofillSuggestions() {
+    const url = 'https://techadv.herokuapp.com/getSearchKeyword';
+    let a: any;
+    this._http.get(url).subscribe((data) => {
+      a = data;
+      this._dataService.searchSuggestionKeywords = a.content;
+    });
+  }
+
   getEvents() {
     const url = 'https://techadv.herokuapp.com/getEvents';
-    // let requestBody = new HttpParams();
-    // const requestBody = {
-    //   'userId' : this._dataService.userId,
-    //   'location' : this._dataService.location
-    // };
     const requestBody = {
       'userId' : this._dataService.userId,
       'location' : this._dataService.location
     };
+    let a: any;
     this._http.post(url, requestBody, httpOptions).subscribe(data => {
-      this._dataService.eventsList = data.content;
+      a = data;
+      this._dataService.eventsList = a.content;
     });
   }
-  registerNewUser(userId, location) {
 
+  searchSubmit(searchText) {
+    const requestBody = {
+      "userId": this._dataService.userId,
+      "location":this._dataService.location,
+      "searchText": searchText
+    }
+    let a: any;
+    const url = 'https://techadv.herokuapp.com/search';
+    this._http.post(url, requestBody, httpOptions).subscribe(data => {
+      a =  data;
+      this._dataService.eventsList = a.content.recomended;
+    });
+  }
+ 
+  registerNewUser() {
+    const requestBody = {
+      'name': this._dataService.regName,
+      'email': this._dataService.regEmail,
+      'mobile': this._dataService.regMobile,
+      'password': this._dataService.regPassword,
+      'prefrences': this._dataService.regPreferences
+    };
+    let a: any;
+    const url = 'https://techadv.herokuapp.com/signUp';
+    this._http.post(url, requestBody, httpOptions).subscribe(data => {
+      a = data;
+      if(a.status == 1) {
+        console.log(a.message);
+        alert(a.message);
+      }
+    });
+  }
+  loginUser(email, password) {
+    const requestBody = {
+      'email': email,
+      'password': password
+    };
+    let a: any;
+    const url = 'https://techadv.herokuapp.com/login';
+    this._http.post(url, requestBody, httpOptions).subscribe(data => {
+      a = data;
+      if (a.status === 1) {
+        console.log(a.message);
+        alert(a.message);
+        this._dataService.userInfo = a.content;
+        this._dataService.userId = a.content.userId;
+        this.getEvents();
+      } else {
+        alert(a.message);
+      }
+    });
   }
   /* Created by Anubhab
   * Returns Observable of events

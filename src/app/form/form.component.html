@@ -5,19 +5,19 @@
   </div>
   <div class="center-items text-center">
       <mat-form-field color="primary" style="width: 100%" class="">
-          <input type="text" matInput placeholder="Name">
+          <input type="text" matInput placeholder="Name" [(ngModel)]="name" >
       </mat-form-field>
       <mat-form-field style="width: 100%" class="">
-          <input type="email" matInput placeholder="Email Address">
+          <input type="email" matInput placeholder="Email Address" [(ngModel)]="email" >
         </mat-form-field>
         <mat-form-field style="width: 100%" class="">
-            <input type="password" matInput placeholder="Password">
+            <input type="password" matInput placeholder="Password" [(ngModel)]="password" >
         </mat-form-field>
         <mat-form-field style="width: 100%" class="">
             <input type="password" matInput placeholder="Confirm Password">
         </mat-form-field>
         <mat-form-field style="width: 100%" class="">
-            <input type="number" matInput placeholder="Mobile Number">
+            <input type="number" matInput placeholder="Mobile Number" [(ngModel)]="phone" >
         </mat-form-field>
             <button mat-raised-button class="reg-button" (click)='proceed()'>Proceed </button>
 </div>

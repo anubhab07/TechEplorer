@@ -21,13 +21,25 @@
     <div class="content">
         <div class="text-left">
           <h1>Explore events and find like minded people on your technical endeavour.</h1>
-            <input class="form-control center-form" type="text" [(ngModel)]='searchTerm'
-            placeholder="Tell us what you are looking for?" (keyup.enter)='submitSearch()'>
+            <!-- <input class="form-control center-form" type="text" [(ngModel)]='searchTerm'
+            placeholder="Tell us what you are looking for?" (keyup.enter)='submitSearch()'> -->
+            <mat-form-field class="example-full-width">
+                <input matInput placeholder="Tell us what you'relooking for?" aria-label="State" [(ngModel)]='searchTerm'
+                [matAutocomplete]="auto" [formControl]="stateControl" (keyup.enter)='submitSearch()'>
+                <mat-autocomplete #auto="matAutocomplete">
+                  <mat-option *ngFor="let name of filteredSuggestions | async" [value]="name">
+                    <!-- <img style="vertical-align:middle;" aria-hidden src="{{state.flag}}" height="25" /> -->
+                    <span>{{ name }}</span> 
+                    <!-- <small>Population: {{state.population}}</small> -->
+                  </mat-option>
+                </mat-autocomplete>
+              </mat-form-field>
           
         </div>
     </div>
 </div>
-<div *ngIf="eventsList.length>0; else eventsLoading">
+<div>
+    <!-- <div *ngIf="eventsList.length>0; else eventsLoading"> -->
 
 <hr>
 <br>
@@ -44,7 +56,7 @@
           <mat-card-title>{{event.eventName}}</mat-card-title>
           <mat-card-subtitle>{{event.location}}</mat-card-subtitle>
         </mat-card-header>
-        <img mat-card-image class="card-body-img" src="{{'./../assets/images/'+ event.imgKey +'.jpg'}}" [alt]="event.imgKey">
+        <img mat-card-image class="card-body-img" src="{{'./../assets/images/'+ event.imgKey +'.jpg'}}" onerror="this.src='../../assets/images/spring.jpg'" [alt]="event.imgKey">
         <mat-card-content>
           <p>{{event.description}}</p>
           <p>{{event.eventDate}}</p>

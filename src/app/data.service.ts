@@ -11,13 +11,13 @@ export class DataService {
   regPassword: string;
   regPreferences = [];
 
-  loginId: string;
-  loginPassword: string;
+  userInfo: any;
 
   userId = '';
   location = '';
 
   searchString = '';
   eventsList = [];
+  searchSuggestionKeywords: any;
   constructor() { }
 }

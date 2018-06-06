@@ -171,3 +171,25 @@
     left: 45%;
     opacity: 1 !important;
   }
+  /deep/ p{
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    max-width: 350px;
+  }
+  .example-form {
+    min-width: 150px;
+    max-width: 500px;
+    width: 100%;
+  }
+  
+  .example-full-width {
+    width: 100%;
+  }
+  /deep/ .mat-form-field-flex{
+    color: #000;
+    background: white;
+    font-size: 150%;
+    border: 1px solid #fafafa;
+    border-radius: 5px;
+  }

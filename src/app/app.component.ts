@@ -108,7 +108,7 @@ export class LoginDialogComponent {
   password: string;
   constructor(
     public dialogRef: MatDialogRef<LoginDialogComponent>,
-    @Inject(MAT_DIALOG_DATA) public data: any, private _router: Router) { }
+    @Inject(MAT_DIALOG_DATA) public data: any, private _router: Router, private _webService: WebCallingService) { }
 
   onNoClick(): void {
     this.dialogRef.close();
@@ -117,11 +117,7 @@ export class LoginDialogComponent {
   submit(key) {
     switch (key) {
       case 'login':
-            if (this.email === 'dhiraj@gmail.com' && this.password === 'password') {
-              this._router.navigate(['user']);
-            } else {
-            alert('Invalid credentials.');
-            }
+            this._webService.loginUser(this.email, this.password);
             break;
       case 'register': this._router.navigate(['register']);
     }

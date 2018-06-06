@@ -45,7 +45,7 @@ export class PreferencesComponent implements OnInit {
         this._dataService.regPreferences.push(element.prefId.toString());
       }
     });
-    setTimeout(() => {this._webService.registerNewUser(this._dataService.userId, location); }, 500);
+    setTimeout(() => {this._webService.registerNewUser(); }, 500);
   }
 
 }

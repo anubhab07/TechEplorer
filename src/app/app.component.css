@@ -64,3 +64,6 @@ a{
     margin-left: 17%;
     margin-top: 2%;
 }
+input{
+    width: -webkit-fill-available;
+}
