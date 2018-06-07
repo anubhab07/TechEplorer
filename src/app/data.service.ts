@@ -13,11 +13,12 @@ export class DataService {
 
   userInfo: any;
 
-  userId = '';
-  location = '';
+  userId = '2';
+  location = 'Hyderabad';
 
   searchString = '';
   eventsList = [];
   searchSuggestionKeywords: any;
+  selectedEvent: any;
   constructor() { }
 }

@@ -29,7 +29,7 @@ export class AppComponent implements OnInit {
     private msgService: MessagingService
   ) {
     // set screenWidth on page load
-    this._webService.getEvents();
+
     this.screenWidth = window.innerWidth;
     window.onresize = () => {
       // set screenWidth on screen size change
@@ -46,6 +46,8 @@ export class AppComponent implements OnInit {
   getLocation2() {
     this._appService.getUserLocation().subscribe(res => {
       console.log(res);
+      // this._dataService.location = res.city;
+      this._webService.getEvents();
     });
   }
 

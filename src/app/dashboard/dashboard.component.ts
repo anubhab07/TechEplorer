@@ -6,20 +6,21 @@ import { AppService } from '../app.service';
 import {FormControl} from '@angular/forms';
 import {Observable} from 'rxjs';
 import {map, startWith} from 'rxjs/operators';
-
+import { Router } from '@angular/router';
 @Component({
   selector: 'app-dashboard',
   templateUrl: './dashboard.component.html',
   styleUrls: ['./dashboard.component.css']
 })
-export class DashboardComponent implements OnInit, DoCheck,AfterViewInit {
+export class DashboardComponent implements OnInit, DoCheck, AfterViewInit {
   searchTerm = '';
   eventsList = [];
   suggestionsList = [];
   filteredSuggestions: any;
   stateControl: FormControl;
 
-  constructor(private _dataService: DataService, private _webService: WebCallingService, private _appService: AppService) {
+  constructor(private _dataService: DataService, private _webService: WebCallingService, private _appService: AppService,
+  private _router: Router) {
     // this.suggestionsList = this._dataService.searchSuggestionKeywords;
     setTimeout(() => {
       this.suggestionsList = this._dataService.searchSuggestionKeywords;
@@ -61,5 +62,9 @@ export class DashboardComponent implements OnInit, DoCheck,AfterViewInit {
       window.scrollTo(0, window.outerHeight);
     }
   }
- 
+  seeDetails(event) {
+    this._dataService.selectedEvent = event;
+    this._router.navigate(['details']);
+  }
+
 }

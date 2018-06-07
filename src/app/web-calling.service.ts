@@ -47,10 +47,10 @@ export class WebCallingService {
 
   searchSubmit(searchText) {
     const requestBody = {
-      "userId": this._dataService.userId,
-      "location":this._dataService.location,
-      "searchText": searchText
-    }
+      'userId': this._dataService.userId,
+      'location': this._dataService.location,
+      'searchText': searchText
+    };
     let a: any;
     const url = 'https://techadv.herokuapp.com/search';
     this._http.post(url, requestBody, httpOptions).subscribe(data => {
@@ -58,7 +58,7 @@ export class WebCallingService {
       this._dataService.eventsList = a.content.recomended;
     });
   }
- 
+
   registerNewUser() {
     const requestBody = {
       'name': this._dataService.regName,
@@ -71,7 +71,7 @@ export class WebCallingService {
     const url = 'https://techadv.herokuapp.com/signUp';
     this._http.post(url, requestBody, httpOptions).subscribe(data => {
       a = data;
-      if(a.status == 1) {
+      if (a.status === 1) {
         console.log(a.message);
         alert(a.message);
       }

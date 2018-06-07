@@ -33,3 +33,9 @@
     color: white;
     min-width: 20%;
 }
+/deep/ .mat-card-image:first-child {
+  margin-top: 0px;
+}
+/deep/ .mat-progress-bar{
+  height: 12px;
+}
