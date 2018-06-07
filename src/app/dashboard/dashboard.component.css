@@ -193,3 +193,7 @@
     border: 1px solid #fafafa;
     border-radius: 5px;
   }
+  .parallax-h1{
+    margin: -150px 0px 150px 15px;
+    font-size: 40px; 
+  }
