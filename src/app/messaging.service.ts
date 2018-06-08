@@ -2,6 +2,7 @@ import { Injectable } from '@angular/core';
 import { AngularFireDatabase } from 'angularfire2/database';
 import { AngularFireAuth } from 'angularfire2/auth';
 import * as firebase from 'firebase';
+import { WebCallingService } from './web-calling.service';
 
 import 'rxjs/add/operator/take';
 import { BehaviorSubject } from 'rxjs/BehaviorSubject';
@@ -13,7 +14,7 @@ export class MessagingService {
   messaging = firebase.messaging();
   currentMessage = new BehaviorSubject(null);
 
-  constructor(private db: AngularFireDatabase, private afAuth: AngularFireAuth) { }
+  constructor(private db: AngularFireDatabase, private afAuth: AngularFireAuth, private _webService: WebCallingService) { }
 
   updateToken(token) {
     this.afAuth.authState.take(1).subscribe(user => {
@@ -34,6 +35,7 @@ export class MessagingService {
       })
       .then(token => {
         console.log(token);
+        this._webService.
         this.updateToken(token);
       })
       .catch((err) => {

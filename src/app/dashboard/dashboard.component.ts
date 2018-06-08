@@ -48,6 +48,12 @@ export class DashboardComponent implements OnInit, DoCheck, AfterViewInit {
   ngAfterViewInit() {
 
   }
+  getURL() {
+    const number = Math.floor(Math.random() * 20 + 1);
+    const url = '../../assets/images/' + number + '.jpg';
+    console.log(url);
+    return url;
+  }
 
   ngDoCheck() {
     if (this.eventsList !== this._dataService.eventsList) {

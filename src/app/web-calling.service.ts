@@ -35,7 +35,7 @@ export class WebCallingService {
   getEvents() {
     const url = 'https://techadv.herokuapp.com/getEvents';
     const requestBody = {
-      'userId' : this._dataService.userId,
+      // 'userId' : this._dataService.userId,
       'location' : this._dataService.location
     };
     let a: any;
@@ -112,6 +112,15 @@ export class WebCallingService {
       .pipe(
         catchError(this.handleError('getUserLocation', []))
       );
+  }
+
+  saveMessageId(userId, notificationId) {
+    const url = 'https://localhost:8080/NotificationData';
+    const requestBody = {
+      'notificationId': notificationId,
+      'userId': userId
+    };
+    this._http.post(url, requestBody, httpOptions);
   }
 
   private handleError<T> (operation = 'operation', result?: T) {

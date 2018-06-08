@@ -26,7 +26,7 @@
             <!-- <input class="form-control center-form" type="text" [(ngModel)]='searchTerm'
             placeholder="Tell us what you are looking for?" (keyup.enter)='submitSearch()'> -->
             <mat-form-field class="example-full-width">
-                <input matInput placeholder="Tell us what you'relooking for?" aria-label="State" [(ngModel)]="searchTerm"
+                <input matInput placeholder="Tell us what you're looking for?" aria-label="State" [(ngModel)]="searchTerm"
                 [matAutocomplete]="auto" [formControl]="stateControl" (keyup.enter)='submitSearch()'>
                 <mat-autocomplete #auto="matAutocomplete">
                   <mat-option *ngFor="let name of filteredSuggestions | async" [value]="name">
@@ -55,19 +55,17 @@
       <mat-card class="example-card">
         <mat-card-header>
           <!-- <div mat-card-avatar class="example-header-image"></div> -->
-          <mat-card-title>{{event.eventName}}</mat-card-title>
-          <mat-card-subtitle>{{event.location}}</mat-card-subtitle>
+          <mat-card-title><h4>{{event.eventName}}</h4></mat-card-title>
+          <mat-card-subtitle><h6>{{event.location}}</h6></mat-card-subtitle>
         </mat-card-header>
         <!-- <img mat-card-image class="card-body-img" src="{{'./../assets/images/'+ event.imgKey +'.jpg'}}" onerror="this.src='../../assets/images/spring.jpg'" [alt]="event.imgKey"> -->
-        <mat-card-content>
+         <img mat-card-image class="card-body-img" [src]="getURL()" onerror="this.src='../../assets/images/spring.jpg'" >
+         <mat-card-content>
+            <p><strong>{{event.eventDate}}</strong></p>
           <p>{{event.description}}</p>
-          <a target="_blank" (click)= 'seeDetails(event)'>Read more</a>
-          <p>{{event.eventDate}}</p>
-
         </mat-card-content>
         <mat-card-actions>
-          <button mat-button>LIKE</button>
-          <button mat-button>SHARE</button>
+          <button mat-button (click)='seeDetails(event)'>Check Details</button>
         </mat-card-actions>
       </mat-card>
     </mat-grid-tile>

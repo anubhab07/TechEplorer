@@ -126,6 +126,9 @@ export class LoginDialogComponent {
 
 
     }
+    getHome() {
+      this._router.navigate(['/dashboard']);
+    }
 
   }
 
